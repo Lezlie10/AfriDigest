@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AfriDigest — Home</title>
+  <meta name="description" content="AfriDigest — insights and stories from across Africa">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header sticky" id="siteHeader">
+      <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <img class="logo" src="./assets/logo.svg" alt="AfriDigest logo">
+        <span class="brand-text">AfriDigest</span>
+        <span class="brand-tagline">All Things Africa</span>
+      </a>
+
+      <form class="search-form" role="search" action="/search" method="get">
+        <label for="siteSearch" class="visually-hidden">Search AfriDigest</label>
+        <input id="siteSearch" name="q" type="search" placeholder="Search articles" aria-label="Search articles">
+        <button type="submit" aria-label="Search">🔍</button>
+      </form>
+
+      <div class="header-actions">
+        <a class="subscribe" href="#">Subscribe</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+      </div>
+
+      <nav id="mainNav" class="main-nav" role="navigation" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">World</a></li>
+          <li><a href="#">Culture</a></li>
+          <li><a href="#">Opinion</a></li>
+          <li><a href="#">Business</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Deep, local reporting — global context</h1>
+          <p class="lead">Original journalism and analysis across the continent.</p>
+          <a class="cta" href="#">Read latest</a>
+        </div>
+        <img class="hero-image" src="https://via.placeholder.com/800x420" alt="People reading news">
+      </div>
+    </section>
+
+    <section class="featured-strip container" aria-label="Featured stories">
+      <h2>Featured</h2>
+      <div class="featured-grid">
+        <article class="featured-card">
+          <img src="https://via.placeholder.com/700x420" alt="Featured image">
+          <div class="featured-body">
+            <div class="kicker">Featured</div>
+            <h3><a href="#">Featured story: Investigative report</a></h3>
+            <p class="excerpt">A highlighted investigation that spans reporting across the region.</p>
+          </div>
+        </article>
+        <article class="featured-card">
+          <img src="https://via.placeholder.com/700x420" alt="Featured image">
+          <div class="featured-body">
+            <div class="kicker">Opinion</div>
+            <h3><a href="#">A perspective on current events</a></h3>
+            <p class="excerpt">A timely opinion piece from a leading thinker.</p>
+          </div>
+        </article>
+        <article class="featured-card">
+          <img src="https://via.placeholder.com/700x420" alt="Featured image">
+          <div class="featured-body">
+            <div class="kicker">Culture</div>
+            <h3><a href="#">Exploring cultural trends</a></h3>
+            <p class="excerpt">An immersive feature on culture and creativity.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cards container">
+      <h2>Latest</h2>
+      <div class="grid" id="articleGrid">
+        <article class="card">
+          <img src="https://via.placeholder.com/400x240" alt="Article image">
+          <h3><a href="#">Story title sample — headline</a></h3>
+          <p class="excerpt">A short excerpt to draw readers in and explain what this piece is about.</p>
+          <div class="meta">By <strong>Jane Doe</strong> · 5 min read</div>
+        </article>
+        <article class="card">
+          <img src="https://via.placeholder.com/400x240" alt="Article image">
+          <h3><a href="#">Another feature — culture</a></h3>
+          <p class="excerpt">Short excerpt for the second article card to show layout.</p>
+          <div class="meta">By <strong>John Okafor</strong> · 7 min read</div>
+        </article>
+        <article class="card">
+          <img src="https://via.placeholder.com/400x240" alt="Article image">
+          <h3><a href="#">Analysis: regional economy</a></h3>
+          <p class="excerpt">Quick summary of the analysis piece to invite clicks.</p>
+          <div class="meta">By <strong>Mary A.</strong> · 6 min read</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> AfriDigest — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

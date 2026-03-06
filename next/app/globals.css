@@ -1,0 +1,9 @@
+
+/* local imports inside next app */
+@import './styles/styleguide.css';
+@import './styles/site.css';
+
+@import "tailwindcss";
+
+html,body,#__next{height:100%}
+

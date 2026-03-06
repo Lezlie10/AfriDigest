@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Culture desk artwork</title>
+  <desc id="desc">Warm editorial illustration representing art, fashion, and creative culture.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3f2b1d"/>
+      <stop offset="100%" stop-color="#8e4a2f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="220" cy="120" r="170" fill="#fbbf24" fill-opacity="0.35"/>
+  <circle cx="980" cy="540" r="300" fill="#fbbf24" fill-opacity="0.15"/>
+  <rect x="120" y="300" width="260" height="260" rx="16" fill="#fff7ed" fill-opacity="0.12"/>
+  <rect x="420" y="250" width="260" height="310" rx="16" fill="#fff7ed" fill-opacity="0.18"/>
+  <rect x="720" y="210" width="260" height="350" rx="16" fill="#fff7ed" fill-opacity="0.22"/>
+  <text x="90" y="130" font-family="Georgia, serif" font-size="88" fill="#fff7ed">CULTURE</text>
+  <text x="90" y="182" font-family="Arial, sans-serif" font-size="24" letter-spacing="3" fill="#fde68a">AFRIDIGEST DESK</text>
+</svg>

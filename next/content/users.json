@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1772806003826,
+    "fullName": "Leslie Uduehi",
+    "email": "leslieuduehi@gmail.com",
+    "phone": "08072935793",
+    "passwordHash": "957b0e523b9715c64225636a9da7ab2597bd05b2a7c968c63ca750394c69acb304ceb9f6e62d861fd213b599570ba592ed04168b0bc5a85387357a9e0336cff5",
+    "passwordSalt": "80ac453472cdad6ecaf74db8417339d1",
+    "createdAt": "2026-03-06T14:06:43.826Z",
+    "subscriptionStatus": "inactive"
+  }
+]
