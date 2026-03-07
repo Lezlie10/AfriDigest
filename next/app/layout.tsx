@@ -32,31 +32,40 @@ export default function RootLayout({ children }: { children: React.ReactNode }){
     <html lang="en">
       <body>
         <a className="skip-link" href="#main-content">Skip to main content</a>
-        <header className="site-header">
-          <div className="container flex items-center justify-between py-4">
-            <Link className="flex items-center" href="/">
-              <img src="/logo.svg" alt="AfriDigest logo" className="h-9 mr-3"/>
-              <div>
-                <div className="font-serif text-xl">AfriDigest</div>
-                <div className="text-xs text-amber-700">All Things Africa</div>
+        <header className="site-header sticky">
+          <div className="container py-4">
+            <div className="header-top-row">
+              <Link className="brand-lockup" href="/">
+                <img src="/logo.svg" alt="AfriDigest logo" className="brand-logo"/>
+                <div>
+                  <div className="font-serif text-xl">AfriDigest</div>
+                  <div className="text-xs text-amber-700">All Things Africa</div>
+                </div>
+              </Link>
+
+              <div className="header-quick-actions">
+                <Link className="text-sm text-gray-600" href="/login">Login</Link>
+                <Link className="text-sm text-gray-600" href="/account">My Account</Link>
+                <Link className="btn btn-outline btn-sm" href="/signup">Sign up</Link>
+                <Link className="btn btn-primary btn-sm" href="/subscribe">Subscribe</Link>
               </div>
-            </Link>
+            </div>
+
             <nav className="header-links" aria-label="Primary navigation">
+              <div className="header-main-links">
+                <Link className="text-sm text-gray-600" href="/categories/world">World</Link>
+                <Link className="text-sm text-gray-600" href="/categories/culture">Culture</Link>
+                <Link className="text-sm text-gray-600" href="/categories/sports">Sports</Link>
+                <Link className="text-sm text-gray-600" href="/categories/opinion">Opinion</Link>
+                <Link className="text-sm text-gray-600" href="/admin/articles">Admin</Link>
+                <Link className="text-sm text-gray-600" href="/admin/subscriptions">Sub Requests</Link>
+              </div>
+
               <form action="/search" method="get" className="header-search" role="search">
                 <label className="visually-hidden" htmlFor="header-q">Search articles</label>
-                <input id="header-q" name="q" type="search" placeholder="Search" />
-                <button className="btn btn-outline btn-sm" type="submit">Go</button>
+                <input id="header-q" name="q" type="search" placeholder="Search articles" />
+                <button className="btn btn-outline btn-sm" type="submit">Search</button>
               </form>
-              <Link className="text-sm text-gray-600" href="/categories/world">World</Link>
-              <Link className="text-sm text-gray-600" href="/categories/culture">Culture</Link>
-              <Link className="text-sm text-gray-600" href="/categories/sports">Sports</Link>
-              <Link className="text-sm text-gray-600" href="/categories/opinion">Opinion</Link>
-              <Link className="text-sm text-gray-600" href="/admin/articles">Admin</Link>
-              <Link className="text-sm text-gray-600" href="/admin/subscriptions">Sub Requests</Link>
-              <Link className="text-sm text-gray-600" href="/login">Login</Link>
-              <Link className="text-sm text-gray-600" href="/account">My Account</Link>
-              <Link className="btn btn-outline btn-sm" href="/signup">Sign up</Link>
-              <Link className="btn btn-outline btn-sm" href="/subscribe">Subscribe</Link>
             </nav>
           </div>
         </header>
