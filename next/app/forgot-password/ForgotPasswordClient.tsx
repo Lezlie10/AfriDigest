@@ -13,6 +13,13 @@ export default function ForgotPasswordClient(){
   const isEmailValid = /\S+@\S+\.\S+/.test(email)
   const canSubmit = isEmailValid && !isSubmitting
 
+  async function readResponsePayload(res: Response){
+    const contentType = String(res.headers.get('content-type') || '').toLowerCase()
+    if(contentType.includes('application/json')) return res.json()
+    const text = await res.text()
+    return { error: text || `Request failed with status ${res.status}` }
+  }
+
   async function onSubmit(e: React.FormEvent){
     e.preventDefault()
     if(!canSubmit) return
@@ -27,7 +34,7 @@ export default function ForgotPasswordClient(){
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       })
-      const json = await res.json()
+      const json = await readResponsePayload(res)
       if(!res.ok){
         setError(json?.error || 'Failed to send code')
         return

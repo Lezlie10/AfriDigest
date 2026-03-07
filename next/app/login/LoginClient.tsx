@@ -13,6 +13,13 @@ export default function LoginClient(){
   const isEmailValid = /\S+@\S+\.\S+/.test(email)
   const canSubmit = isEmailValid && password.length > 0 && !isSubmitting
 
+  async function readResponsePayload(res: Response){
+    const contentType = String(res.headers.get('content-type') || '').toLowerCase()
+    if(contentType.includes('application/json')) return res.json()
+    const text = await res.text()
+    return { error: text || `Request failed with status ${res.status}` }
+  }
+
   async function onSubmit(e: React.FormEvent){
     e.preventDefault()
     if(!canSubmit) return
@@ -25,7 +32,7 @@ export default function LoginClient(){
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       })
-      const json = await res.json()
+      const json = await readResponsePayload(res)
       if(!res.ok){
         setError(json?.error || 'Login failed')
         return
