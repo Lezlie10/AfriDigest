@@ -31,6 +31,9 @@ function getTransport(){
   if(service){
     return nodemailer.createTransport({
       service,
+      connectionTimeout: 8000,
+      greetingTimeout: 8000,
+      socketTimeout: 10000,
       auth: { user, pass },
     })
   }
@@ -41,6 +44,9 @@ function getTransport(){
     host,
     port,
     secure: port === 465,
+    connectionTimeout: 8000,
+    greetingTimeout: 8000,
+    socketTimeout: 10000,
     auth: { user, pass },
   })
 }
@@ -56,7 +62,6 @@ export async function sendMail(input: MailInput){
 
   const from = process.env.SMTP_FROM || process.env.SMTP_USER || 'no-reply@afridigest.local'
   try{
-    await transport.verify()
     await transport.sendMail({
       from,
       to: input.to,
