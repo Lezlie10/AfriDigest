@@ -15,12 +15,21 @@ function getPool(){
   const connectionString = process.env.DATABASE_URL
   if(!connectionString) throw new Error('DATABASE_URL is not set')
 
-  g.__afridigestPgPool = new Pool({ connectionString })
+  g.__afridigestPgPool = new Pool({
+    connectionString,
+    connectionTimeoutMillis: 5000,
+    idleTimeoutMillis: 10000,
+    max: 3,
+  })
   return g.__afridigestPgPool
 }
 
 export async function queryRows<T = any>(sql: string, params: any[] = []){
   const pool = getPool()
-  const result = await pool.query(sql, params)
+  const timeoutMs = 8000
+  const timeout = new Promise<never>((_, reject) => {
+    setTimeout(() => reject(new Error('Postgres query timed out')), timeoutMs)
+  })
+  const result = await Promise.race([pool.query(sql, params), timeout])
   return result.rows as T[]
 }
