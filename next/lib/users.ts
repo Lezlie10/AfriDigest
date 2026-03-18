@@ -62,6 +62,10 @@ export async function readUsers(): Promise<UserRecord[]>{
 }
 
 export async function writeUsers(items: UserRecord[]){
+  if(process.env.VERCEL && !isPostgresEnabled()){
+    throw new Error('DATABASE_URL is required on Vercel for user data updates')
+  }
+
   if(isPostgresEnabled()){
     try{
       for(const item of items){
