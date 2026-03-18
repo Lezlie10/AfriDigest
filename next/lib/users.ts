@@ -185,6 +185,10 @@ export async function updateUserPassword(userId: number, newPassword: string){
     }
   }
 
+  if(process.env.NODE_ENV === 'production'){
+    throw new Error('DATABASE_URL is required in production for password updates')
+  }
+
   const users = await readUsers()
   const index = users.findIndex(u => Number(u.id) === Number(userId))
   if(index < 0) return false
