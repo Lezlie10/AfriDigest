@@ -41,8 +41,9 @@ export default function ForgotPasswordClient(){
       }
       setMessage(json?.message || 'Reset code sent')
       if(json?.devCode) setDevCode(String(json.devCode))
-    }catch{
-      setError('Network error. Please try again.')
+    }catch(err: any){
+      console.error('Forgot password error:', err)
+      setError(err?.message || 'Network error. Please try again.')
     }finally{
       setIsSubmitting(false)
     }

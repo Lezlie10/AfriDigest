@@ -19,6 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try{
       await sendResetEmail(normalized, code)
     }catch(err: any){
+      console.error('[forgot-password] SMTP error for', normalized, ':', err?.message)
       return res.status(500).json({
         error: err?.message || 'Unable to send reset email. Check SMTP settings.',
       })
